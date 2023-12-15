@@ -17,24 +17,21 @@ function validateCount(count) {
 
 class Triangle {
     constructor(a, b, c) {
-        if ((a + b > c) && (a + c > b) && (c + b > a)) {
-            this.a = a;
-            this.b = b;
-            this.c = c;
-            this._perimeter;
-            this._area;
-        } else {
+        if (!(a + b > c && a + c > b && c + b > a)) {
             throw new Error('Треугольник с такими сторонами не существует');
-        }
+        };
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
     get perimeter() {
-        return this._perimeter = this.a + this.b + this.c;
+        return this.a + this.b + this.c;
     }
 
     get area() {
         let halfPerimeter = this.perimeter / 2;
-        this._area = Math.sqrt(halfPerimeter * (halfPerimeter - this.a) * (halfPerimeter - this.b) * (halfPerimeter - this.c));
-        return Number(this._area.toFixed(3));
+        let area = Math.sqrt(halfPerimeter * (halfPerimeter - this.a) * (halfPerimeter - this.b) * (halfPerimeter - this.c));
+        return Number(area.toFixed(3));
     }
 };
 
@@ -51,4 +48,4 @@ function getTriangle(a, b, c) {
             }
         }
     }
-}
+};
