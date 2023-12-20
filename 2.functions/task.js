@@ -48,7 +48,8 @@ function differenceEvenOddWorker(...arr) {
 function averageEvenElementsWorker(...arr) {
 	if (arr.length === 0) {
 		return 0;
-	} let sumEvenElement = 0;
+	};
+	let sumEvenElement = 0;
 	let countEvenElement = 0;
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i] % 2 === 0) {
@@ -57,7 +58,6 @@ function averageEvenElementsWorker(...arr) {
 		}
 	}
 	return sumEvenElement / countEvenElement;
-
 }
 
 function makeWork(arrOfArr, func) {
